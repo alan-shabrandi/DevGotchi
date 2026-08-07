@@ -1,0 +1,37 @@
+{
+  "name": "devgotchi-extension",
+  "displayName": "DevGotchi",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "devgotchi-sidebar",
+          "title": "DevGotchi",
+          "icon": "assets/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "devgotchi-sidebar": [
+        {
+          "type": "webview",
+          "id": "devgotchi.petView",
+          "name": "Pet Room"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  }
+}
